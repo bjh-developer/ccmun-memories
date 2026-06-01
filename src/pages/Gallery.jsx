@@ -4,21 +4,10 @@ import Masonry from '../components/Masonry';
 // Each item: { id, img, url }
 // url = optional link when clicked (use '' for no link)
 const PHOTOS = [
-  { id: '1',  img: 'https://picsum.photos/id/1015/600/900',  url: '' },
-  { id: '2',  img: 'https://picsum.photos/id/1011/600/750',  url: '' },
-  { id: '3',  img: 'https://picsum.photos/id/1020/600/800',  url: '' },
-  { id: '4',  img: 'https://picsum.photos/id/1035/600/600',  url: '' },
-  { id: '5',  img: 'https://picsum.photos/id/1043/600/850',  url: '' },
-  { id: '6',  img: 'https://picsum.photos/id/1044/600/700',  url: '' },
-  { id: '7',  img: 'https://picsum.photos/id/1053/600/650',  url: '' },
-  { id: '8',  img: 'https://picsum.photos/id/106/600/900',   url: '' },
-  { id: '9',  img: 'https://picsum.photos/id/1062/600/750',  url: '' },
-  { id: '10', img: 'https://picsum.photos/id/1063/600/800',  url: '' },
-  { id: '11', img: 'https://picsum.photos/id/1074/600/600',  url: '' },
-  { id: '12', img: 'https://picsum.photos/id/1080/600/850',  url: '' },
-  { id: '13', img: 'https://picsum.photos/id/110/600/700',   url: '' },
-  { id: '14', img: 'https://picsum.photos/id/1084/600/650',  url: '' },
-  { id: '15', img: 'https://picsum.photos/id/1086/600/900',  url: '' },
+  { id: '1',  img: '/assets/91cbb027-cdd4-4842-a539-6a98637f7720.JPG',  url: '' },
+  { id: '2',  img: '/assets/DSC00139.JPG',  url: '' },
+  { id: '3',  img: '/assets/DSC00973.JPG',  url: '' },
+  { id: '4',  img: '/assets/DSC00987.JPG',  url: '' },
 ];
 
 export default function Gallery() {

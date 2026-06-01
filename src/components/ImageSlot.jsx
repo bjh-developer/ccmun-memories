@@ -1,8 +1,9 @@
 import { useState } from 'react'
 
-export default function ImageSlot({ id, shape = 'rounded', className = '', style = {} }) {
+export default function ImageSlot({ src, id, shape = 'rounded', className = '', style = {} }) {
   const [failed, setFailed] = useState(false)
   const borderRadius = shape === 'circle' ? '50%' : shape === 'pill' ? '999px' : '2px'
+  const resolved = src || (id ? `/images/${id}.jpg` : null)
 
   return (
     <div
@@ -16,9 +17,9 @@ export default function ImageSlot({ id, shape = 'rounded', className = '', style
         ...style,
       }}
     >
-      {!failed && id
+      {!failed && resolved
         ? <img
-            src={`/images/${id}.jpg`}
+            src={resolved}
             alt=""
             style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', position: 'absolute', inset: 0 }}
             onError={() => setFailed(true)}

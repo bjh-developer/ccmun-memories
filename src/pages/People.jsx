@@ -6,12 +6,12 @@ import { DESK, CHAIRS, REFLECTIONS } from '../data/people'
 
 const YEARS = ['All', '2023', '2024', '2025', '2026']
 
-function PersonCard({ slotId, name, role, years, onClick }) {
+function PersonCard({ imageSrc, name, role, years, onClick }) {
   return (
     <button className="pcard reveal" onClick={onClick}>
       <div className="photo-wrap">
         <div className="mat">
-          <ImageSlot id={slotId} />
+          <ImageSlot src={imageSrc} />
         </div>
         <span className="read" aria-hidden="true">Read reflection →</span>
       </div>
@@ -26,12 +26,13 @@ function PersonCard({ slotId, name, role, years, onClick }) {
 
 function buildList(list, prefix, reflectionOffset = 0) {
   return list.map((p, i) => ({
-    slotId: `ppl-${prefix}${i + 1}`,
+    slotId: p.image || `ppl-${prefix}${i + 1}`,
+    imageSrc: p.image ? `/images/${p.image}.jpg` : null,
     name: p.name || 'Name Surname',
     role: p.role,
     years: p.years,
     ord: prefix === 'd' ? 'The Desk' : 'The Chairs',
-    quote: REFLECTIONS[(i + reflectionOffset) % REFLECTIONS.length],
+    quote: p.reflection || REFLECTIONS[(i + reflectionOffset) % REFLECTIONS.length],
   }))
 }
 
@@ -172,7 +173,7 @@ export default function People() {
             <button className="x" ref={closeRef} aria-label="Close" onClick={closeModal}>&times;</button>
             <div className="m-photo">
               <div className="mat">
-                <ImageSlot id={selected.slotId} />
+                <ImageSlot src={selected.imageSrc} />
               </div>
             </div>
             <div className="m-body">
