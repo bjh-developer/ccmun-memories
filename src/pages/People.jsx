@@ -4,9 +4,11 @@ import ImageSlot from '../components/ImageSlot'
 import useScrollReveal from '../hooks/useScrollReveal'
 import { DESK, CHAIRS, REFLECTIONS } from '../data/people'
 
-function PersonCard({ slotId, name, role, years, onClick, cardRef }) {
+const YEARS = ['All', '2023', '2024', '2025', '2026']
+
+function PersonCard({ slotId, name, role, years, onClick }) {
   return (
-    <button className="pcard reveal" onClick={onClick} ref={cardRef}>
+    <button className="pcard reveal" onClick={onClick}>
       <div className="photo-wrap">
         <div className="mat">
           <ImageSlot id={slotId} placeholder="Headshot" />
@@ -35,12 +37,16 @@ function buildList(list, prefix, reflectionOffset = 0) {
 
 export default function People() {
   const [selected, setSelected] = useState(null)
+  const [filterYear, setFilterYear] = useState('All')
   const closeRef = useRef()
   const triggerRef = useRef()
-  useScrollReveal()
+  useScrollReveal(filterYear)
 
-  const deskList = buildList(DESK, 'd', 0)
-  const chairsList = buildList(CHAIRS, 'c', 2)
+  const allDesk = buildList(DESK, 'd', 0)
+  const allChairs = buildList(CHAIRS, 'c', 2)
+
+  const deskList = filterYear === 'All' ? allDesk : allDesk.filter(p => p.years.includes(filterYear))
+  const chairsList = filterYear === 'All' ? allChairs : allChairs.filter(p => p.years.includes(filterYear))
 
   const openModal = useCallback((person, cardEl) => {
     triggerRef.current = cardEl
@@ -78,41 +84,71 @@ export default function People() {
         </div>
       </section>
 
-      <section className="pad-sm" style={{ paddingTop: 'clamp(20px,3vw,30px)' }}>
-        <div className="wrap">
-          <div className="grp-head reveal">
-            <div>
-              <span className="eyebrow">The Desk</span>
-              <h2>Those who held the gavel.</h2>
-            </div>
-            <span className="cnt" aria-live="polite">{deskList.length} members</span>
-          </div>
-          <div className="people-grid">
-            {deskList.map((p) => (
-              <PersonCard key={p.slotId} {...p} onClick={e => openModal(p, e.currentTarget)} />
-            ))}
-          </div>
+      {/* YEAR FILTER */}
+      <div className="rail" role="group" aria-label="Filter by year">
+        <div className="rail-inner">
+          {YEARS.map(yr => (
+            <button
+              key={yr}
+              className={filterYear === yr ? 'on' : ''}
+              onClick={() => setFilterYear(yr)}
+              aria-pressed={filterYear === yr}
+            >
+              {yr === 'All' ? 'All Years' : `CCMUN ${yr}`}
+            </button>
+          ))}
         </div>
-      </section>
+      </div>
 
-      <div className="divider" />
-
-      <section className="pad-sm">
-        <div className="wrap">
-          <div className="grp-head reveal">
-            <div>
-              <span className="eyebrow">The Chairs</span>
-              <h2>Those who ran the rooms.</h2>
+      {/* DESK */}
+      {deskList.length > 0 && (
+        <section className="pad-sm" style={{ paddingTop: 'clamp(20px,3vw,36px)' }}>
+          <div className="wrap">
+            <div className="grp-head reveal">
+              <div>
+                <span className="eyebrow">The Desk</span>
+                <h2>Those who held the gavel.</h2>
+              </div>
+              <span className="cnt" aria-live="polite">{deskList.length} members</span>
             </div>
-            <span className="cnt" aria-live="polite">{chairsList.length} chairs</span>
+            <div className="people-grid">
+              {deskList.map(p => (
+                <PersonCard key={p.slotId} {...p} onClick={e => openModal(p, e.currentTarget)} />
+              ))}
+            </div>
           </div>
-          <div className="people-grid">
-            {chairsList.map((p) => (
-              <PersonCard key={p.slotId} {...p} onClick={e => openModal(p, e.currentTarget)} />
-            ))}
+        </section>
+      )}
+
+      {deskList.length > 0 && chairsList.length > 0 && <div className="divider" />}
+
+      {/* CHAIRS */}
+      {chairsList.length > 0 && (
+        <section className="pad-sm">
+          <div className="wrap">
+            <div className="grp-head reveal">
+              <div>
+                <span className="eyebrow">The Chairs</span>
+                <h2>Those who ran the rooms.</h2>
+              </div>
+              <span className="cnt" aria-live="polite">{chairsList.length} chairs</span>
+            </div>
+            <div className="people-grid">
+              {chairsList.map(p => (
+                <PersonCard key={p.slotId} {...p} onClick={e => openModal(p, e.currentTarget)} />
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
+
+      {deskList.length === 0 && chairsList.length === 0 && (
+        <section className="pad">
+          <div className="wrap" style={{ textAlign: 'center', color: 'var(--muted)' }}>
+            No members found for this year.
+          </div>
+        </section>
+      )}
 
       <section className="pad-sm">
         <div className="wrap" style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 22 }}>

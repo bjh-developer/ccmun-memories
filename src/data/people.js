@@ -7,27 +7,101 @@ export const REFLECTIONS = [
   "Four years on, the friendships outlasted the resolutions. That, more than any award, is what I'm taking with me.",
 ]
 
-// Secretariat team sourced from chungchengmun.wixstudio.com/ccmun/secretariatteam
 export const DESK = [
-  { name: 'Chua Chong Jie Clement', role: 'Secretary-General', years: '2022 — 2026 · Founder' },
-  { name: 'Radiance Tan', role: 'Deputy Secretary-General (Academics)', years: '2026' },
-  { name: 'Bek Joon Hao', role: 'Deputy Secretary-General (Conference Management)', years: '2026' },
-  { name: 'Ryan Tan Jing Min', role: 'Under Secretary-General (Academics)', years: '2026' },
-  { name: 'Boo Shao Yang', role: 'Under Secretary-General (Logistics)', years: '2026' },
-  { name: 'Danelle Kaylee Khoo Bacomo', role: 'Under Secretary-General (Outreach)', years: '2026' },
-  { name: 'Chuah Yew Seon', role: 'Chief of Staff', years: '2026' },
+  // CCMUN I — 2023 (Founding team)
+  { name: 'Clement Chua',         role: 'Secretary-General',                              years: '2023 · Founder' },
+  { name: 'Radiance Tan',         role: 'Deputy Secretary-General (Academics)',            years: '2023' },
+  { name: 'Bek Joon Hao',         role: 'Deputy Secretary-General (Conference Management)', years: '2023' },
+  { name: 'Ryan Tan',             role: 'Under Secretary-General (Academics)',             years: '2023' },
+  { name: 'Danelle Bacomo',       role: 'Under Secretary-General (Publicity)',             years: '2023' },
+  { name: 'Boo Shao Yang',        role: 'Under Secretary-General (Logistics)',             years: '2023' },
+  { name: 'Chuah Yew Seon',       role: 'Chief of Staff',                                 years: '2023' },
+
+  // CCMUN II — 2024
+  { name: 'Shanglin',             role: 'Secretary-General',                              years: '2024' },
+  { name: 'Sok Yi',               role: 'Deputy Secretary-General (Operations)',           years: '2024' },
+  { name: 'Victoria',             role: 'Deputy Secretary-General (Academics)',            years: '2024' },
+  { name: 'Charlotte',            role: 'Chief of Staff',                                 years: '2024' },
+  { name: 'Ryan',                 role: 'Under Secretary-General (Academics)',             years: '2024' },
+  { name: 'Yi Xuan',              role: 'Under Secretary-General (Logistics & Conference)', years: '2024' },
+  { name: 'Klara',                role: 'Under Secretary-General (Administration)',        years: '2024' },
+  { name: 'Valerie',              role: 'Under Secretary-General (Communications)',        years: '2024' },
+  { name: 'Tiffanys',             role: 'Under Secretary-General (Communications)',        years: '2024' },
+
+  // CCMUN III — 2025
+  { name: 'Elise',                role: 'Secretary-General',                              years: '2025' },
+  { name: 'Cherry',               role: 'Deputy Secretary-General (Operations)',           years: '2025' },
+  { name: 'Kimberley',            role: 'Deputy Secretary-General (Academics)',            years: '2025' },
+  { name: 'Martel',               role: 'Chief of Staff',                                 years: '2025' },
+  { name: 'Ryan',                 role: 'Under Secretary-General (Academics)',             years: '2025' },
+  { name: 'Adele',                role: 'Under Secretary-General (Operations)',            years: '2025' },
+  { name: 'Ace',                  role: 'Under Secretary-General (Operations)',            years: '2025' },
+
+  // CCMUN IV — 2026
+  { name: 'Chanelle',             role: 'Secretary-General',                              years: '2026' },
+  { name: 'Gwen',            role: 'Deputy Secretary-General (Operations)',           years: '2026' },
+  { name: 'Genise',            role: 'Under Secretary-General (Operations)',            years: '2026' },  
+  { name: 'Kieran',              role: 'Deputy Secretary-General (Academics)',            years: '2026' },
+  { name: 'Jovine',           role: 'Under Secretary-General (Academics)',            years: '2026' },
 ]
 
-// Committees for CCMUN 2026
-const COMMITTEES = [
-  'UNHCR', 'FAO', 'IPCC', 'Press Corps',
+export const CHAIRS = [
+  // CCMUN I — 2023
+  { name: 'Rui Yik',              role: 'Chairperson · IPCC',        years: '2023' },
+  { name: 'Aria',                 role: 'Chairperson · IPCC',        years: '2023' },
+  { name: 'Wan Qi',               role: 'Chairperson · IPCC',        years: '2023' },
+  { name: 'Xiaohan',              role: 'Chairperson · FAO',         years: '2023' },
+  { name: 'Charlotte',            role: 'Chairperson · FAO',         years: '2023' },
+  { name: 'Cami',                 role: 'Chairperson · FAO',         years: '2023' },
+  { name: 'Yew Seon',             role: 'Chairperson · UNHCR',       years: '2023' },
+  { name: 'Timothy',              role: 'Chairperson · UNHCR',       years: '2023' },
+  { name: 'Eaint Hmu',            role: 'Chairperson · UNHCR',       years: '2023' },
+  { name: 'Tisha',                role: 'Press Editor · Press Corps', years: '2023' },
+  { name: 'Chevelle',             role: 'Press Editor · Press Corps', years: '2023' },
+  { name: 'Shanglin',             role: 'Press Editor · Press Corps', years: '2023' },
+
+  // CCMUN II — 2024
+  { name: 'Hui Yu',               role: 'Chairperson · UNSC',        years: '2024' },
+  { name: 'Cammie',               role: 'Chairperson · UNSC',        years: '2024' },
+  { name: 'Brianna',              role: 'Chairperson · ASEAN',       years: '2024' },
+  { name: 'Elise',                role: 'Chairperson · ASEAN',       years: '2024' },
+  { name: 'Cherry',               role: 'Chairperson · UNESCO',      years: '2024' },
+  { name: 'Clyde',                role: 'Chairperson · UNESCO',      years: '2024' },
+  { name: 'Zhi Xin',              role: 'Chairperson · UNESCO',      years: '2024' },
+  { name: 'Mirabelle',            role: 'Press Editor · Press Corps', years: '2024' },
+  { name: 'Isabel',               role: 'Press Editor · Press Corps', years: '2024' },
+
+  // CCMUN III — 2025
+  { name: 'Peixuan (Celia)',       role: 'Chairperson · UNCLOS',      years: '2025' },
+  { name: 'Zhi Xin',              role: 'Chairperson · UNCLOS',      years: '2025' },
+  { name: 'Gwen',                 role: 'Chairperson · UNCLOS',      years: '2025' },
+  { name: 'Zirong',               role: 'Chairperson · UNCLOS',      years: '2025' },
+  { name: 'Ai Shi',               role: 'Chairperson · UNICEF',      years: '2025' },
+  { name: 'Chanelle',             role: 'Chairperson · UNICEF',      years: '2025' },
+  { name: 'Gabrielle',            role: 'Chairperson · UNICEF',      years: '2025' },
+  { name: 'Jin',                  role: 'Chairperson · UNICEF',      years: '2025' },
+  { name: 'Jinglang',             role: 'Chairperson · UNODC',       years: '2025' },
+  { name: 'Genise',               role: 'Chairperson · UNODC',       years: '2025' },
+  { name: 'Ziqi',                 role: 'Chairperson · UNODC',       years: '2025' },
+  { name: 'Junze',                role: 'Chairperson · UNODC',       years: '2025' },
+  { name: 'Charlotte',            role: 'Press Editor · Press Corps', years: '2025' },
+  { name: 'Zi Kei',               role: 'Press Editor · Press Corps', years: '2025' },
+  { name: 'Kieran',               role: 'Press Editor · Press Corps', years: '2025' },
+
+  // CCMUN IV — 2026
+  { name: 'Apphia',               role: 'Chairperson · UNSC',        years: '2026' },
+  { name: 'Gabrielle',            role: 'Chairperson · UNSC',        years: '2026' },
+  { name: 'Liang Qi',             role: 'Chairperson · UNSC',        years: '2026' },
+  { name: 'Kai Xi',               role: 'Chairperson · UNSC',        years: '2026' },
+  { name: 'Shermaine',            role: 'Chairperson · ECOSOC',      years: '2026' },
+  { name: 'Wei En',               role: 'Chairperson · ECOSOC',      years: '2026' },
+  { name: 'Kate',                 role: 'Chairperson · ECOSOC',      years: '2026' },
+  { name: 'Tiffany',              role: 'Chairperson · ECOSOC',      years: '2026' },
+  { name: 'Zi Kei',               role: 'Chairperson · UNHCR',       years: '2026' },
+  { name: 'Sheng Yi',             role: 'Chairperson · UNHCR',       years: '2026' },
+  { name: 'Ashlynn',              role: 'Chairperson · UNHCR',       years: '2026' },
+  { name: 'Reann',                role: 'Chairperson · UNHCR',       years: '2026' },
+  { name: 'Fernando',             role: 'Press Editor · Press Corps', years: '2026' },
+  { name: 'Matt',                 role: 'Press Editor · Press Corps', years: '2026' },
+  { name: 'Audrey',               role: 'Press Editor · Press Corps', years: '2026' },
 ]
-
-const YEAR_CYCLE = ['2023', '2023 — 2024', '2024', '2024 — 2025', '2025', '2025 — 2026', '2026']
-const yr = i => YEAR_CYCLE[i % YEAR_CYCLE.length]
-
-// name field left blank — to be filled from Instagram scrape or manually
-export const CHAIRS = COMMITTEES.flatMap((c, i) => [
-  { name: '', role: `Chairperson · ${c}`, years: '2026' },
-  { name: '', role: `Deputy Chair · ${c}`, years: '2026' },
-])
