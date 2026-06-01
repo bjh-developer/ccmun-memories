@@ -24,7 +24,9 @@ export default function Home() {
         <div className="wrap">
           <div style={{ display: 'flex', alignItems: 'center', gap: 'clamp(16px,3vw,32px)' }}>
             <img className="hero-logo" src={ccmunLogo} alt="CCMUN phoenix" />
-            <img className="hero-logo" src={cchmLogo} alt="Chung Cheng High School" style={{ width: 'clamp(60px,9vw,96px)' }} />
+            <a href="https://www.chungchenghighmain.moe.edu.sg/" target="_blank" rel="noopener noreferrer">
+              <img className="hero-logo" src={cchmLogo} alt="Chung Cheng High School" style={{ width: 'clamp(60px,9vw,96px)' }} />
+            </a>
           </div>
           <span className="eyebrow">Chung Cheng High School (Main)</span>
           <h1>CCMUN</h1>

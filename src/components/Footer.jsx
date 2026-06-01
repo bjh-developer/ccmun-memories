@@ -13,12 +13,15 @@ export default function Footer() {
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
             <img className="phoenix-sm" src={ccmunLogo} alt="" />
-            <img className="phoenix-sm" src={cchmLogo} alt="" />
+            <a href="https://www.chungchenghighmain.moe.edu.sg/" target="_blank" rel="noopener noreferrer">
+              <img className="phoenix-sm" src={cchmLogo} alt="Chung Cheng High School (Main)" />
+            </a>
           </div>
         </div>
         <div className="foot-bottom">
           <span>Chung Cheng High School (Main) · Model United Nations · 2022 — 2026</span>
           <div className="foot-links">
+            <a href="https://www.chungchenghighmain.moe.edu.sg/" target="_blank" rel="noopener">CCHM Website <ArrowUpRight size={14} style={{ display: 'inline', verticalAlign: 'middle' }} /></a>
             <a href="https://www.instagram.com/chungchengmun/" target="_blank" rel="noopener">Instagram <ArrowUpRight size={14} style={{ display: 'inline', verticalAlign: 'middle' }} /></a>
             <Link to="/history">History</Link>
             <Link to="/people">People</Link>
