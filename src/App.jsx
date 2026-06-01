@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import History from './pages/History'
 import People from './pages/People'
 import Thanks from './pages/Thanks'
+import Gallery from './pages/Gallery'
 
 export default function App() {
   const { pathname } = useLocation()
@@ -21,6 +22,7 @@ export default function App() {
           <Route path="/history" element={<History />} />
           <Route path="/people" element={<People />} />
           <Route path="/thanks" element={<Thanks />} />
+          <Route path="/gallery" element={<Gallery />} />
         </Routes>
       </main>
       <Footer />
