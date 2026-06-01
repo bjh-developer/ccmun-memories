@@ -58,10 +58,10 @@ export default function Home() {
           </div>
           <div className="reveal d2 intro-photo">
             <div className="mat">
-              <ImageSlot id="home-intro-1" placeholder="Drop a conference photo" style={{ aspectRatio: '4/3', width: '100%' }} />
+              <ImageSlot id="home-intro-1" style={{ aspectRatio: '4/3', width: '100%' }} />
             </div>
             <div className="mat">
-              <ImageSlot id="home-intro-2" placeholder="Candid moment" style={{ aspectRatio: '1/1', width: '100%' }} />
+              <ImageSlot id="home-intro-2" style={{ aspectRatio: '1/1', width: '100%' }} />
             </div>
           </div>
         </div>

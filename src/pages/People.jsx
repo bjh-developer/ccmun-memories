@@ -11,7 +11,7 @@ function PersonCard({ slotId, name, role, years, onClick }) {
     <button className="pcard reveal" onClick={onClick}>
       <div className="photo-wrap">
         <div className="mat">
-          <ImageSlot id={slotId} placeholder="Headshot" />
+          <ImageSlot id={slotId} />
         </div>
         <span className="read" aria-hidden="true">Read reflection →</span>
       </div>
@@ -172,7 +172,7 @@ export default function People() {
             <button className="x" ref={closeRef} aria-label="Close" onClick={closeModal}>&times;</button>
             <div className="m-photo">
               <div className="mat">
-                <ImageSlot id={selected.slotId} placeholder="Headshot" />
+                <ImageSlot id={selected.slotId} />
               </div>
             </div>
             <div className="m-body">

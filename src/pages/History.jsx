@@ -112,7 +112,7 @@ export default function History() {
               </div>
               <div className="m-media reveal d2">
                 <div className="mat">
-                  <ImageSlot id={m.slotId} placeholder={m.placeholder} />
+                  <ImageSlot id={m.slotId} />
                 </div>
               </div>
             </div>
