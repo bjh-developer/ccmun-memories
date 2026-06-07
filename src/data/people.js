@@ -1,6 +1,6 @@
 export const DESK = [
   // CCMUN I — 2023 (Founding team)
-  { name: 'Clement Chua',         role: 'Secretary-General',                               years: '2023', image: 'clement' },
+  { name: 'Clement Chua',         role: 'Secretary-General',                               years: '2023', image: 'clement_v2', reflection: "It is truly remarkable how a simple idea turned into the conference that is CCMUN today. Working with like-minded peers to turn our shared vision into reality has been immensely fulfilling, and the conference's success stands as a testament to the hard work and determination of the CCMUN team. I am proud that CCMUN has become an excellent platform for debate and intellectual stimulation, turning delegates of today into leaders of tomorrow." },
   { name: 'Radiance Tan',         role: 'Deputy Secretary-General (Academics)',             years: '2023', image: 'radiance' },
   { name: 'Bek Joon Hao',         role: 'Deputy Secretary-General (Conference Management)', years: '2023', reflection: "I'm fortunate to have been supported by a group of enthusiastic and independent juniors-turned-cofounders. I'll never forget the times we've spent going back and forth with teachers and school leaders in an attempt to kickstart CCMUN 😅", image: 'bek-joon-hao' },
   { name: 'Ryan Tan',             role: 'Under Secretary-General (Academics)',              years: '2023', image: 'ryan-2023' },
