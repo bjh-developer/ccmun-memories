@@ -27,16 +27,36 @@ const useMeasure = () => {
   return [ref, size];
 };
 
-const loadImageRatios = async (urls) => {
-  const entries = await Promise.all(
-    urls.map(src => new Promise(resolve => {
+const RATIO_CACHE_KEY = 'gallery-ratios-v1';
+
+const getCachedRatios = () => {
+  try { return JSON.parse(localStorage.getItem(RATIO_CACHE_KEY) || '{}'); } catch { return {}; }
+};
+
+const saveRatios = (ratios) => {
+  try { localStorage.setItem(RATIO_CACHE_KEY, JSON.stringify(ratios)); } catch {}
+};
+
+const loadImageRatios = async (urls, onPartial) => {
+  const cached = getCachedRatios();
+  const missing = urls.filter(u => cached[u] === undefined);
+
+  if (missing.length === 0) return cached;
+
+  onPartial(cached);
+
+  const fresh = await Promise.all(
+    missing.map(src => new Promise(resolve => {
       const img = new Image();
       img.src = src;
       img.onload = () => resolve([src, img.naturalHeight / img.naturalWidth]);
-      img.onerror = () => resolve([src, 1]);
+      img.onerror = () => resolve([src, 0.667]);
     }))
   );
-  return Object.fromEntries(entries);
+
+  const result = { ...cached, ...Object.fromEntries(fresh) };
+  saveRatios(result);
+  return result;
 };
 
 const Masonry = ({
@@ -81,10 +101,11 @@ const Masonry = ({
   };
 
   useEffect(() => {
-    loadImageRatios(items.map(i => i.img)).then(setRatios);
+    const urls = items.map(i => i.img);
+    loadImageRatios(urls, setRatios).then(setRatios);
   }, [items]);
 
-  const imagesReady = items.length > 0 && items.every(i => ratios[i.img] !== undefined);
+  const imagesReady = width > 0 && items.length > 0 && Object.keys(ratios).length > 0;
 
   const grid = useMemo(() => {
     if (!width || !imagesReady) return [];
@@ -94,7 +115,7 @@ const Masonry = ({
     return items.map(child => {
       const col = colHeights.indexOf(Math.min(...colHeights));
       const x = col * (columnWidth + gap);
-      const height = columnWidth * (ratios[child.img] ?? 1);
+      const height = columnWidth * (ratios[child.img] ?? 0.667);
       const y = colHeights[col];
       colHeights[col] += height + gap;
       return { ...child, x, y, w: columnWidth, h: height };

@@ -1,4 +1,7 @@
+import { useState } from 'react';
 import Masonry from '../components/Masonry';
+
+const PAGE_SIZE = 24;
 
 // Replace these with real CCMUN photos.
 // Each item: { id, img, url }
@@ -136,6 +139,10 @@ const PHOTOS = [
 ];
 
 export default function Gallery() {
+  const [visible, setVisible] = useState(PAGE_SIZE);
+  const shown = PHOTOS.slice(0, visible);
+  const hasMore = visible < PHOTOS.length;
+
   return (
     <section style={{ maxWidth: 'var(--maxw)', margin: '0 auto', padding: '2.5rem 1.5rem 4rem' }}>
       <h1 style={{ fontFamily: 'var(--sans)', color: 'var(--ink)', marginBottom: '0.25rem' }}>
@@ -146,7 +153,7 @@ export default function Gallery() {
       </p>
       <div style={{ height: 'auto' }}>
         <Masonry
-          items={PHOTOS}
+          items={shown}
           animateFrom="bottom"
           stagger={0.04}
           blurToFocus={true}
@@ -155,6 +162,26 @@ export default function Gallery() {
           colorShiftOnHover={false}
         />
       </div>
+      {hasMore && (
+        <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2.5rem' }}>
+          <button
+            onClick={() => setVisible(v => Math.min(v + PAGE_SIZE, PHOTOS.length))}
+            style={{
+              padding: '0.6rem 2rem',
+              fontFamily: 'var(--sans)',
+              fontSize: '0.9rem',
+              background: 'transparent',
+              color: 'var(--ink)',
+              border: '1.5px solid var(--ink)',
+              borderRadius: '6px',
+              cursor: 'pointer',
+              letterSpacing: '0.03em',
+            }}
+          >
+            Load more ({PHOTOS.length - visible} remaining)
+          </button>
+        </div>
+      )}
     </section>
   );
 }
