@@ -154,6 +154,25 @@ const Masonry = ({
 
   const totalHeight = grid.reduce((max, item) => Math.max(max, item.y + item.h), 0);
 
+  if (!imagesReady) {
+    const skeletonHeights = [1.2, 0.8, 1.5, 0.9, 1.1, 0.7, 1.3, 1.0, 0.85, 1.4, 0.95, 1.2, 0.75, 1.1, 0.9, 1.3];
+    return (
+      <div
+        ref={containerRef}
+        className="masonry-skeleton"
+        style={{ gridTemplateColumns: `repeat(${columns}, 1fr)` }}
+      >
+        {skeletonHeights.slice(0, columns * 4).map((ratio, i) => (
+          <div
+            key={i}
+            className="masonry-skeleton-item"
+            style={{ height: Math.round(200 * ratio), animationDelay: `${(i % 6) * 0.1}s` }}
+          />
+        ))}
+      </div>
+    );
+  }
+
   return (
     <div
       ref={containerRef}

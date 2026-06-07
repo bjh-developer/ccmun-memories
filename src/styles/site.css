@@ -401,6 +401,25 @@ section{position:relative;z-index:1}
 .finale .closing{font-family:var(--serif);font-style:italic;font-size:clamp(1.05rem,2vw,1.35rem);color:#d9cdbe;max-width:30ch}
 .finale .tag{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:#b9ad9e;margin-top:6px}
 
+/* ---------- pulse dot ---------- */
+@keyframes pulse{
+  0%,100%{opacity:.8;transform:scale(1)}
+  50%{opacity:.3;transform:scale(0.7)}
+}
+
+/* ---------- masonry skeleton ---------- */
+@keyframes shimmer{
+  0%{background-position:200% center}
+  100%{background-position:-200% center}
+}
+.masonry-skeleton{display:grid;gap:16px;width:100%}
+.masonry-skeleton-item{
+  border-radius:10px;
+  background:linear-gradient(90deg,var(--paper-deep) 25%,var(--line) 50%,var(--paper-deep) 75%);
+  background-size:200% 100%;
+  animation:shimmer 1.6s ease-in-out infinite;
+}
+
 /* ---------- mobile ---------- */
 @media(max-width:760px){
   .nav-links{

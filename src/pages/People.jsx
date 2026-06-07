@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import ImageSlot from '../components/ImageSlot'
 import useScrollReveal from '../hooks/useScrollReveal'
-import { DESK, CHAIRS, REFLECTIONS } from '../data/people'
+import { DESK, CHAIRS } from '../data/people'
 
 const YEARS = ['All', '2023', '2024', '2025', '2026']
 
@@ -32,7 +32,7 @@ function buildList(list, prefix, reflectionOffset = 0) {
     role: p.role,
     years: p.years,
     ord: prefix === 'd' ? 'The Desk' : 'The Chairs',
-    quote: p.reflection || REFLECTIONS[(i + reflectionOffset) % REFLECTIONS.length],
+    quote: p.reflection || null,
   }))
 }
 
@@ -82,6 +82,15 @@ export default function People() {
           <span className="eyebrow">The Desk &amp; The Chairs</span>
           <h1>The faces behind<br />every <em>gavel.</em></h1>
           <p className="lede">Across four years, dozens of students gave their evenings, their nerves, and their voices to CCMUN. Tap any face to read their reflection.</p>
+          <span style={{
+            display: 'inline-flex', alignItems: 'center', gap: 6,
+            marginTop: '1rem', padding: '5px 12px', borderRadius: 999,
+            background: 'rgba(232,38,41,0.08)', border: '1px solid rgba(232,38,41,0.2)',
+            fontSize: '0.75rem', letterSpacing: '0.02em', color: 'var(--red)',
+          }}>
+            <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--red)', opacity: 0.8, animation: 'pulse 2s ease-in-out infinite' }} />
+            Reflections pouring in gradually!
+          </span>
         </div>
       </section>
 
@@ -182,8 +191,10 @@ export default function People() {
               <div className="m-role">{selected.role}</div>
               <div className="m-years">{selected.years}</div>
               <p className="m-quote">
-                {selected.quote}
-                <em>— {selected.role}</em>
+                {selected.quote
+                  ? <>{selected.quote}<em>— {selected.role}</em></>
+                  : <span style={{ color: 'var(--muted)', fontStyle: 'italic', fontSize: '0.9em' }}>Reflection still brewing…</span>
+                }
               </p>
             </div>
           </div>

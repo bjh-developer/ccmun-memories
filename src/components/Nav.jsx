@@ -21,7 +21,7 @@ export default function Nav() {
           <NavLink className="brand" to="/" onClick={close}>
             <img src={ccmunLogo} alt="CCMUN phoenix logo" />
             <span style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.12 }}>
-              <b>CCMUN</b>
+              <b>Chung Cheng Model United Nations</b>
               <span className="b-sub">A Memory · 2022–2026</span>
             </span>
           </NavLink>

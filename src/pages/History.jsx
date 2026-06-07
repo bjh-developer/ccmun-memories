@@ -110,11 +110,13 @@ export default function History() {
                   </div>
                 </div>
               </div>
-              <div className="m-media reveal d2">
-                <div className="mat">
-                  <ImageSlot id={m.slotId} />
+              {m.slotId && (
+                <div className="m-media reveal d2">
+                  <div className="mat">
+                    <ImageSlot id={m.slotId} />
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           ))}
 
