@@ -7,6 +7,7 @@ import History from './pages/History'
 import People from './pages/People'
 import Thanks from './pages/Thanks'
 import Gallery from './pages/Gallery'
+import { Analytics } from "@vercel/analytics/react"
 
 export default function App() {
   const { pathname } = useLocation()
@@ -26,6 +27,7 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
+      <Analytics/>
     </>
   )
 }
