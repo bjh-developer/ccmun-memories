@@ -29,11 +29,11 @@ export const DESK = [
   { name: 'Ace',                  role: 'Under Secretary-General (Operations)',             years: '2025', reflection: "CCMUN was definitely a key memory of my secondary school journey — it gave me a sense of fulfilment that I had never felt before. Planning, organising and executing it with my team taught me many valuable insights and experiences, and it opened my eyes to the behind the scenes of MUN. Most importantly, CCMUN left me with a second family and an ever growing love for MUN. Thank you and goodbye CCMUN ❤️", image: 'ace' },
 
   // CCMUN IV — 2026
-  { name: 'Chanelle',             role: 'Secretary-General',                               years: '2026', image: 'chanelle' },
+  { name: 'Chanelle',             role: 'Secretary-General',                               years: '2026', image: 'chanelle_v2' },
   { name: 'Gwen',                 role: 'Deputy Secretary-General (Operations)',            years: '2026', image: 'gwen' },
   { name: 'Genise',               role: 'Under Secretary-General (Operations)',             years: '2026', image: 'genise' },
-  { name: 'Kieran',               role: 'Deputy Secretary-General (Academics)',             years: '2026', image: 'kieran' },
-  { name: 'Jovine',               role: 'Under Secretary-General (Academics)',              years: '2026', image: 'jovine', reflection: "It was a memorable experience where I got the rare chance to participate in a MUN as part of the planning committee and as part of the Desk Team. I thoroughly enjoyed training the chairs, building up study guides from zero, and as I looked back on how much everyone had progressed and grew since the start, it made CCMUN all the more meaningful. I also enjoyed being able to dissect complex geopolitical jargons and real world issues!" },
+  { name: 'Kieran',               role: 'Deputy Secretary-General (Academics)',             years: '2026', image: 'kieran_v2' },
+  { name: 'Jovine',               role: 'Under Secretary-General (Academics)',              years: '2026', image: 'jovine_v2', reflection: "It was a memorable experience where I got the rare chance to participate in a MUN as part of the planning committee and as part of the Desk Team. I thoroughly enjoyed training the chairs, building up study guides from zero, and as I looked back on how much everyone had progressed and grew since the start, it made CCMUN all the more meaningful. I also enjoyed being able to dissect complex geopolitical jargons and real world issues!" },
 ]
 
 export const CHAIRS = [
@@ -68,7 +68,7 @@ export const CHAIRS = [
   { name: 'Gwen',                 role: 'Chairperson · UNCLOS',       years: '2025', image: 'gwen' },
   { name: 'Zirong',               role: 'Chairperson · UNCLOS',       years: '2025', image: 'zirong' },
   { name: 'Ai Shi',               role: 'Chairperson · UNICEF',       years: '2025', image: 'ai-shi' },
-  { name: 'Chanelle',             role: 'Chairperson · UNICEF',       years: '2025', image: 'chanelle' },
+  { name: 'Chanelle',             role: 'Chairperson · UNICEF',       years: '2025', image: 'chanelle_v2' },
   { name: 'Gabrielle',            role: 'Chairperson · UNICEF',       years: '2025', image: 'gabrielle' },
   { name: 'Jin',                  role: 'Chairperson · UNICEF',       years: '2025', image: 'jin' },
   { name: 'Jinglang',             role: 'Chairperson · UNODC',        years: '2025', image: 'jing-lang' },
