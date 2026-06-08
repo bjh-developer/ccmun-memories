@@ -32,7 +32,7 @@ export const DESK = [
   { name: 'Chanelle',             role: 'Secretary-General',                               years: '2026', image: 'chanelle_v2' },
   { name: 'Gwen',                 role: 'Deputy Secretary-General (Operations)',            years: '2026', image: 'gwen' },
   { name: 'Genise',               role: 'Under Secretary-General (Operations)',             years: '2026', image: 'genise' },
-  { name: 'Kieran',               role: 'Deputy Secretary-General (Academics)',             years: '2026', image: 'kieran_v2' },
+  { name: 'Kieran',               role: 'Deputy Secretary-General (Academics)',             years: '2026', image: 'kieran_v2', reflection: "This experience helped me develop my public speaking, event planning, teamwork, and communication skills. Despite challenges along the way, seeing the success of CCMUN and the enjoyment of participants was incredibly rewarding. I am grateful for the opportunity to work with and build meaningful connections with fellow organisers, chairs, juniors, and batchmates, which has further strengthened my passion for MUN." },
   { name: 'Jovine',               role: 'Under Secretary-General (Academics)',              years: '2026', image: 'jovine_v2', reflection: "It was a memorable experience where I got the rare chance to participate in a MUN as part of the planning committee and as part of the Desk Team. I thoroughly enjoyed training the chairs, building up study guides from zero, and as I looked back on how much everyone had progressed and grew since the start, it made CCMUN all the more meaningful. I also enjoyed being able to dissect complex geopolitical jargons and real world issues!" },
 ]
 
@@ -77,7 +77,7 @@ export const CHAIRS = [
   { name: 'Junze',                role: 'Chairperson · UNODC',        years: '2025', image: 'jun-ze' },
   { name: 'Charlotte',            role: 'Press Editor · Press Corps',  years: '2025', image: 'charlotte-2025' },
   { name: 'Zi Kei',               role: 'Press Editor · Press Corps',  years: '2025', image: 'zi-kei' },
-  { name: 'Kieran',               role: 'Press Editor · Press Corps',  years: '2025', image: 'kieran' },
+  { name: 'Kieran',               role: 'Press Editor · Press Corps',  years: '2025', image: 'kieran', reflection: "This experience helped me develop my public speaking, event planning, teamwork, and communication skills. Despite challenges along the way, seeing the success of CCMUN and the enjoyment of participants was incredibly rewarding. I am grateful for the opportunity to work with and build meaningful connections with fellow organisers, chairs, juniors, and batchmates, which has further strengthened my passion for MUN." },
 
   // CCMUN IV — 2026
   { name: 'Apphia',               role: 'Chairperson · UNSC',         years: '2026', image: 'apphia' },
