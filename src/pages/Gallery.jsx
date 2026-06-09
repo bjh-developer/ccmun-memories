@@ -136,6 +136,17 @@ const PHOTOS = [
   { id: '127', img: '/assets/IMG_1152.webp',  url: '' },
   { id: '128', img: '/assets/IMG_1166.webp',  url: '' },
   { id: '129', img: '/assets/IMG_1182.webp',  url: '' },
+  { id: '130', img: '/assets/P1010489.webp',  url: '' },
+  { id: '131', img: '/assets/P1010518.webp',  url: '' },
+  { id: '132', img: '/assets/P1010519.webp',  url: '' },
+  { id: '133', img: '/assets/P1010530.webp',  url: '' },
+  { id: '134', img: '/assets/P1010553.webp',  url: '' },
+  { id: '135', img: '/assets/P1010558.webp',  url: '' },
+  { id: '136', img: '/assets/P1010565.webp',  url: '' },
+  { id: '137', img: '/assets/P1010573.webp',  url: '' },
+  { id: '138', img: '/assets/P1010593.webp',  url: '' },
+  { id: '139', img: '/assets/P1010595.webp',  url: '' },
+  { id: '140', img: '/assets/P1010614.webp',  url: '' },
 ];
 
 export default function Gallery() {
