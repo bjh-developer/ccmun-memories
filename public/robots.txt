@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ccmun-memories.vercel.app/sitemap.xml
